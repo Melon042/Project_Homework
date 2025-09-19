@@ -23,3 +23,15 @@ def mask_account_card(account_card: str) -> str:
                 raise ValueError('Некорректный номер карты или счёта')
             else:
                 continue
+
+
+# get_date
+# "2024-03-11T02:26:18.671407" и возвращает строку с датой в формате "ДД.ММ.ГГГГ"
+
+def get_date(timestamp: str) -> str:
+    """Принимает временную метку и возвращает дату в формате ДД.ММ.ГГГГ"""
+    year = timestamp[0:4]
+    month = timestamp[5:7]
+    day = timestamp[8:10]
+    date = f'{day}.{month}.{year}'
+    return date
