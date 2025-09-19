@@ -4,6 +4,7 @@ from src.masks import get_mask_card_number, get_mask_account
 def mask_account_card(account_card: str) -> str:
     """Маскирует данные карты или счёта"""
     account_card_splited = account_card.split()
+    counter = 0
     for i in account_card_splited:
         if i.isdigit():
             if len(i) == 16:
@@ -17,4 +18,8 @@ def mask_account_card(account_card: str) -> str:
             else:
                 raise ValueError('Некорректный номер карты или счёта')
         else:
-            continue
+            counter += 1
+            if counter == len(account_card_splited):
+                raise ValueError('Некорректный номер карты или счёта')
+            else:
+                continue
