@@ -11,12 +11,18 @@
 git clone https://github.com/Melon042/Project_Homework.git
 ```
 ## Описание функций:
-* get_mask_card_number(card_num: str) -> str: #Маскирует номер карты
-* get_mask_account(account_num: str) -> str: #Маскирует номер счёта
-* mask_account_card(account_card: str) -> str: #Маскирует данные карты или счёта
-* get_date(timestamp: str) -> str: #Принимает временную метку и возвращает дату в формате ДД.ММ.ГГГГ
-* filter_by_state(list_dict: list, state='EXECUTED') -> list: #Принимает список словарей, фильтрует их по указанному значению ключа 'state' и возвращает отфильтрованный список.
-* sort_by_date(list_dict: list, reverse: bool = True) -> list: #Принимает список словарей, сортирует их по дате и возвращает отсортированный список.
+* get_mask_card_number(card_num: str) -> str:
+  #Маскирует номер карты
+* get_mask_account(account_num: str) -> str:
+  #Маскирует номер счёта
+* mask_account_card(account_card: str) -> str:
+  #Маскирует данные карты или счёта
+* get_date(timestamp: str) -> str:
+  #Принимает временную метку и возвращает дату в формате ДД.ММ.ГГГГ
+* filter_by_state(bank_operations: list[dict], state: str = "EXECUTED") -> list[dict]:
+  #Принимает список словарей, фильтрует их по указанному значению ключа 'state' и возвращает отфильтрованный список.
+* sort_by_date(bank_operations: list[dict], reverse: bool = True) -> list[dict]:
+  #Принимает список словарей, сортирует их по дате и возвращает отсортированный список.
 
 ## Использование:
 Вызовите функции с соответствующими параметрами с помощью 'print(ФУНКЦИЯ(ПАРАМЕТРЫ))' и запустите код.
@@ -24,7 +30,8 @@ git clone https://github.com/Melon042/Project_Homework.git
 ## Примеры использования функций:
 `print(get_mask_card_number(7000792289606361))`
 
----> 7000 79** **** 6361  #выход функции
+---> 7000 79** **** 6361
+     #выход функции
 
 ### Лицензия:
 Этот проект пока не лицензирован.
