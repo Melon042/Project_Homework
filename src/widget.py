@@ -23,6 +23,7 @@ def mask_account_card(account_card: str) -> str:
                 raise ValueError("Некорректный номер карты или счёта")
             else:
                 continue
+    raise ValueError("Некорректный номер карты или счёта")
 
 
 def get_date(timestamp: str) -> str:

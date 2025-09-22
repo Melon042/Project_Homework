@@ -1,10 +1,9 @@
 import os
 import sys
-
+from src.widget import mask_account_card
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.widget import mask_account_card
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(current_dir, "accounts_cards_data.txt")
