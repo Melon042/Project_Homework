@@ -13,5 +13,6 @@ def sample_card_numbers():
         "too_short": "159683786870519",
         "too_long": "15968378687051999",
         "empty_string": "",
-        "with_letters": "159a878c87051e9q"
+        "with_letters": "159a878c87051e9q",
+        "wrong_data_type_int": 1596837868705199
     }

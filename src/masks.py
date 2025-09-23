@@ -1,5 +1,6 @@
 def get_mask_card_number(card_num: str) -> str:
     """Маскирует номер карты"""
+    card_num = str(card_num)
     card_num_splited = card_num.split()
     counter = 0
     card_num_temp = ''
@@ -31,7 +32,21 @@ def get_mask_card_number(card_num: str) -> str:
 
 def get_mask_account(account_num: str) -> str:
     """Маскирует номер счёта"""
-    if len(account_num) != 20:
-        raise ValueError("Номер счёта должен содержать 20 цифр")
-    masked_account_num = f"**{account_num[-4:]}"
-    return masked_account_num
+    account_num = str(account_num)
+    if account_num.isdigit():
+        if len(account_num) != 20:
+            raise ValueError("Номер счёта должен содержать 20 цифр")
+        masked_account_num = f"**{account_num[-4:]}"
+        return masked_account_num
+    else:
+        raw_account_num = ''
+        for char in account_num:
+            if char.isdigit():
+                raw_account_num += char
+        if len(raw_account_num) != 20:
+            raise ValueError("Номер счёта должен содержать 20 цифр")
+        else:
+            masked_account_num = f"**{raw_account_num[-4:]}"
+            return masked_account_num
+
+
