@@ -28,6 +28,7 @@ def get_mask_card_number(card_num: str) -> str:
                 continue
     raise ValueError("Некорректный номер карты")
 
+
 def get_mask_account(account_num: str) -> str:
     """Маскирует номер счёта"""
     if len(account_num) != 20:
