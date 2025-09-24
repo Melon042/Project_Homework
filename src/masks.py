@@ -20,7 +20,7 @@ def get_mask_card_number(card_num: str) -> str:
     return masked_card_num
 
 
-def get_mask_account(account_num: str) -> str:
+def get_mask_account_number(account_num: str) -> str:
     """Маскирует номер счёта."""
     account_num = str(account_num)
 

@@ -1,9 +1,9 @@
 import pytest
-from src.masks import get_mask_card_number, get_mask_account
+from src.masks import get_mask_card_number, get_mask_account_number
 
 
 def test_get_mask_card_number(sample_card_numbers):
-    """Полный тест функции со всеми вариантами вводных данных"""
+    """Полный тест функции."""
 
     card_number_1 = sample_card_numbers["valid_16_digits"]
     card_number_2 = sample_card_numbers["valid_with_spaces"]
@@ -45,10 +45,12 @@ def test_get_mask_card_number(sample_card_numbers):
                          ('Счет:64686473678894779589', True), ('Счет: 64686473678894779589', True),
                          (64686473678894779589, True), ("", False), ('6468647367889477958', False),
                          ('646864736788947795899', False), ('6686a767b8947c589', False)])
-def test_get_mask_account(account_num, is_valid):
+def test_get_mask_account_number(account_num, is_valid):
+    """Полный тест функции."""
+
     if is_valid:
-        result = get_mask_account(account_num)
+        result = get_mask_account_number(account_num)
         assert result == "Счет **9589" or "Счет: **9589" or "**9589"
     else:
         with pytest.raises(ValueError):
-            get_mask_account(account_num)
+            get_mask_account_number(account_num)
