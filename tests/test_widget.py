@@ -1,13 +1,17 @@
 import pytest
-from src.widget import get_mask_account_or_card_num, get_date
 
-def test_get_mask_account_or_card_num(sample_acc_and_card_nums):
+from src.widget import get_date, get_mask_account_or_card_num
+
+
+def test_get_mask_account_or_card_num(sample_acc_and_card_nums: dict) -> None:
     """Общий тест функции."""
 
     assert get_mask_account_or_card_num(sample_acc_and_card_nums["card"]) == "1596 83** **** 5199"
     assert get_mask_account_or_card_num(sample_acc_and_card_nums["card_with_spaces"]) == "1596 83** **** 5199"
-    assert (get_mask_account_or_card_num(sample_acc_and_card_nums["card_with_prefix"])
-            == "Visa Classic 6831 98** **** 7658")
+    assert (
+        get_mask_account_or_card_num(sample_acc_and_card_nums["card_with_prefix"])
+        == "Visa Classic 6831 98** **** 7658"
+    )
     assert get_mask_account_or_card_num(sample_acc_and_card_nums["account"]) == "**9589"
     assert get_mask_account_or_card_num(sample_acc_and_card_nums["account_with_prefix"]) == "Счет **9589"
     assert get_mask_account_or_card_num(sample_acc_and_card_nums["account_with_prefix_2"]) == "Счет: **9589"
@@ -19,7 +23,7 @@ def test_get_mask_account_or_card_num(sample_acc_and_card_nums):
             get_mask_account_or_card_num(sample_acc_and_card_nums[case])
 
 
-def test_get_date(sample_timestamps):
+def test_get_date(sample_timestamps: dict) -> None:
     """Общий тест функции."""
 
     assert get_date(sample_timestamps["valid"]) == "11.03.2024"

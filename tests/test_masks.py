@@ -1,8 +1,9 @@
 import pytest
-from src.masks import get_mask_card_number, get_mask_account_number
+
+from src.masks import get_mask_account_number, get_mask_card_number
 
 
-def test_get_mask_card_number(sample_card_numbers):
+def test_get_mask_card_number(sample_card_numbers: dict) -> None:
     """Общий тест функции."""
 
     card_number_1 = sample_card_numbers["valid_16_digits"]
@@ -28,24 +29,33 @@ def test_get_mask_card_number(sample_card_numbers):
     assert result_4 == "Visa Classic 6831 98** **** 7658"
     assert result_5 == "1596 83** **** 5199"
 
-    with pytest.raises(ValueError, match='Номер карты должен содержать 16 цифр'):
+    with pytest.raises(ValueError, match="Номер карты должен содержать 16 цифр"):
         get_mask_card_number(card_number_5)
-    with pytest.raises(ValueError, match='Номер карты должен содержать 16 цифр'):
+    with pytest.raises(ValueError, match="Номер карты должен содержать 16 цифр"):
         get_mask_card_number(card_number_6)
-    with pytest.raises(ValueError, match='Номер карты должен содержать 16 цифр'):
+    with pytest.raises(ValueError, match="Номер карты должен содержать 16 цифр"):
         get_mask_card_number(card_number_7)
-    with pytest.raises(ValueError, match='Номер карты должен содержать 16 цифр'):
+    with pytest.raises(ValueError, match="Номер карты должен содержать 16 цифр"):
         get_mask_card_number(card_number_8)
-    with pytest.raises(ValueError, match='Номер карты должен содержать 16 цифр'):
+    with pytest.raises(ValueError, match="Номер карты должен содержать 16 цифр"):
         get_mask_card_number(card_number_9)
 
 
-@pytest.mark.parametrize("account_num, is_valid",
-                        [('64686473678894779589', True), ('Счет 64686473678894779589', True),
-                         ('Счет:64686473678894779589', True), ('Счет: 64686473678894779589', True),
-                         (64686473678894779589, True), ("", False), ('6468647367889477958', False),
-                         ('646864736788947795899', False), ('6686a767b8947c589', False)])
-def test_get_mask_account_number(account_num, is_valid):
+@pytest.mark.parametrize(
+    "account_num, is_valid",
+    [
+        ("64686473678894779589", True),
+        ("Счет 64686473678894779589", True),
+        ("Счет:64686473678894779589", True),
+        ("Счет: 64686473678894779589", True),
+        (64686473678894779589, True),
+        ("", False),
+        ("6468647367889477958", False),
+        ("646864736788947795899", False),
+        ("6686a767b8947c589", False),
+    ],
+)
+def test_get_mask_account_number(account_num: str, is_valid: bool) -> None:
     """Общий тест функции."""
 
     if is_valid:

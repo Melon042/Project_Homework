@@ -2,7 +2,7 @@ import pytest
 
 
 @pytest.fixture
-def sample_card_numbers():
+def sample_card_numbers() -> dict:
     """Предоставляет тестовые данные номеров карт."""
     return {
         "valid_16_digits": "1596837868705199",
@@ -14,12 +14,12 @@ def sample_card_numbers():
         "too_long": "15968378687051999",
         "empty_string": "",
         "with_letters": "159a878c87051e9q",
-        "wrong_data_type_int": 1596837868705199
+        "wrong_data_type_int": 1596837868705199,
     }
 
 
 @pytest.fixture
-def sample_acc_and_card_nums():
+def sample_acc_and_card_nums() -> dict:
     """Предоставляет тестовые данные номеров счетов и карт."""
     return {
         "card": "1596837868705199",
@@ -38,7 +38,7 @@ def sample_acc_and_card_nums():
 
 
 @pytest.fixture
-def sample_timestamps():
+def sample_timestamps() -> dict:
     return {
         "valid": "2024-03-11T02:26:18.671407",
         "invalid_short_year": "24-03-11T02:26:18",
@@ -52,7 +52,7 @@ def sample_timestamps():
 
 
 @pytest.fixture
-def sample_operations():
+def sample_operations() -> list[dict]:
     return [
         {"id": 1, "state": "EXECUTED", "date": "2023-01-01T00:00:00"},
         {"id": 2, "state": "EXECUTED", "date": "2023-01-02T00:00:00"},
@@ -62,13 +62,14 @@ def sample_operations():
         {"id": 6, "state": "EXECUTED", "date": "2023-01-06T00:00:00"},
     ]
 
+
 @pytest.fixture
-def empty_operation():
+def empty_operation() -> list:
     return []
 
 
 @pytest.fixture
-def sample_operations_dates():
+def sample_operations_dates() -> list[dict]:
     return [
         {"id": 1, "date": "2019-07-03T18:35:29.512364"},
         {"id": 2, "date": "2018-06-30T02:08:58.425572"},
