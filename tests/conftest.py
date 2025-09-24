@@ -49,3 +49,30 @@ def sample_timestamps():
         "invalid_none": None,
         "invalid_type_int": 20240311,
     }
+
+
+@pytest.fixture
+def sample_operations():
+    return [
+        {"id": 1, "state": "EXECUTED", "date": "2023-01-01T00:00:00"},
+        {"id": 2, "state": "EXECUTED", "date": "2023-01-02T00:00:00"},
+        {"id": 3, "state": "CANCELED", "date": "2023-01-03T00:00:00"},
+        {"id": 4, "state": "PENDING", "date": "2023-01-04T00:00:00"},
+        {"id": 5, "date": "2023-01-05T00:00:00"},
+        {"id": 6, "state": "EXECUTED", "date": "2023-01-06T00:00:00"},
+    ]
+
+@pytest.fixture
+def empty_operation():
+    return []
+
+
+@pytest.fixture
+def sample_operations_dates():
+    return [
+        {"id": 1, "date": "2019-07-03T18:35:29.512364"},
+        {"id": 2, "date": "2018-06-30T02:08:58.425572"},
+        {"id": 3, "date": "2018-09-12T21:27:25.241689"},
+        {"id": 4, "date": "2018-10-14T08:21:33.419441"},
+        {"id": 5, "date": "2018-10-14T08:21:33.419441"},
+    ]

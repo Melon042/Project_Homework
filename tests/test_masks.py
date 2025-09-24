@@ -3,7 +3,7 @@ from src.masks import get_mask_card_number, get_mask_account_number
 
 
 def test_get_mask_card_number(sample_card_numbers):
-    """Полный тест функции."""
+    """Общий тест функции."""
 
     card_number_1 = sample_card_numbers["valid_16_digits"]
     card_number_2 = sample_card_numbers["valid_with_spaces"]
@@ -46,7 +46,7 @@ def test_get_mask_card_number(sample_card_numbers):
                          (64686473678894779589, True), ("", False), ('6468647367889477958', False),
                          ('646864736788947795899', False), ('6686a767b8947c589', False)])
 def test_get_mask_account_number(account_num, is_valid):
-    """Полный тест функции."""
+    """Общий тест функции."""
 
     if is_valid:
         result = get_mask_account_number(account_num)

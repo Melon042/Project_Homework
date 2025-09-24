@@ -2,7 +2,7 @@ import pytest
 from src.widget import get_mask_account_or_card_num, get_date
 
 def test_get_mask_account_or_card_num(sample_acc_and_card_nums):
-    """Полный тест функции."""
+    """Общий тест функции."""
 
     assert get_mask_account_or_card_num(sample_acc_and_card_nums["card"]) == "1596 83** **** 5199"
     assert get_mask_account_or_card_num(sample_acc_and_card_nums["card_with_spaces"]) == "1596 83** **** 5199"
@@ -20,7 +20,7 @@ def test_get_mask_account_or_card_num(sample_acc_and_card_nums):
 
 
 def test_get_date(sample_timestamps):
-    """Полный тест функции."""
+    """Общий тест функции."""
 
     assert get_date(sample_timestamps["valid"]) == "11.03.2024"
 
