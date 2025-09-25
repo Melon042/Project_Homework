@@ -1,35 +1,35 @@
-from src.masks import get_mask_account, get_mask_card_number
+from src.masks import get_mask_account_number, get_mask_card_number
 
 
-def mask_account_card(account_card: str) -> str:
-    """Маскирует данные карты или счёта"""
-    account_card_splited = account_card.split()
-    counter = 0
-    for i in account_card_splited:
-        if i.isdigit():
-            if len(i) == 16:
-                i_index = account_card_splited.index(i)
-                account_card_splited[i_index] = get_mask_card_number(i)
-                return " ".join(account_card_splited)
-            elif len(i) == 20:
-                i_index = account_card_splited.index(i)
-                account_card_splited[i_index] = get_mask_account(i)
-                return " ".join(account_card_splited)
-            else:
-                raise ValueError("Некорректный номер карты или счёта")
-        else:
-            counter += 1
-            if counter == len(account_card_splited):
-                raise ValueError("Некорректный номер карты или счёта")
-            else:
-                continue
-    raise ValueError("Некорректный номер карты или счёта")
+def get_mask_account_or_card_num(account_card: str) -> str:
+    """Маскирует номер карты или счёта."""
+    account_card = str(account_card)
+
+    digits_only = "".join(char for char in account_card if char.isdigit())
+
+    if len(digits_only) == 16:
+        return get_mask_card_number(account_card)
+    elif len(digits_only) == 20:
+        return get_mask_account_number(account_card)
+    else:
+        raise ValueError("Некорректный номер карты или счёта")
 
 
 def get_date(timestamp: str) -> str:
-    """Принимает временную метку и возвращает дату в формате ДД.ММ.ГГГГ"""
+    """Принимает временную метку и возвращает дату в формате 'ДД.ММ.ГГГГ'."""
+    timestamp = str(timestamp)
+
+    if len(timestamp) < 10:
+        raise ValueError("Некорректный формат даты")
+
+    if timestamp[4] != "-" or timestamp[7] != "-":
+        raise ValueError("Некорректный формат даты")
+
     year = timestamp[0:4]
     month = timestamp[5:7]
     day = timestamp[8:10]
-    date = f"{day}.{month}.{year}"
-    return date
+
+    if not (year.isdigit() and month.isdigit() and day.isdigit()):
+        raise ValueError("Некорректный формат даты")
+
+    return f"{day}.{month}.{year}"
