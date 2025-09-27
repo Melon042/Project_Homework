@@ -1,4 +1,4 @@
-# Новый виджет
+# Учебный pet-проект "Новый виджет"
 
 ## Описание проекта:
 Разработка нового виджета личного кабинета клиентов для крупного банка.
@@ -23,15 +23,29 @@ git clone https://github.com/Melon042/Project_Homework.git
   #Принимает список словарей, фильтрует их по указанному значению ключа 'state' и возвращает отфильтрованный список.
 * sort_by_date(bank_operations: list[dict], reverse: bool = True) -> list[dict]:
   #Принимает список словарей, сортирует их по дате и возвращает отсортированный список.
+* filter_by_currency(transactions: list[dict], currency: str) -> Generator[dict, None, None]:
+  #Возвращает итератор, который поочередно выдает транзакции, где валюта операции соответствует заданной.
+* transaction_descriptions(transactions: list[dict]) -> Generator[str, None, None]:
+  #Принимает список словарей с транзакциями и возвращает описание каждой операции по очереди.
+* card_number_generator(start: int, stop: int) -> Generator[str, None, None]:
+  #Генерирует номера банковских карт в формате 'XXXX XXXX XXXX XXXX'.
 
 ## Использование:
-Вызовите функции с соответствующими параметрами с помощью 'print(ФУНКЦИЯ(ПАРАМЕТРЫ))' и запустите код.
+Вызовите функции с соответствующими параметрами и запустите код.
 
 ## Примеры использования функций:
-`print(get_mask_card_number(7000792289606361))`
+* print(get_mask_card_number(7000792289606361))`
 
----> 7000 79** **** 6361
-     #выход функции
+* usd_transactions = filter_by_currency(transactions, "USD")
+  for _ in range(2):
+      print(next(usd_transactions))
+
+* descriptions = transaction_descriptions(transactions)
+  for _ in range(5):
+      print(next(descriptions))
+
+* for card_number in card_number_generator(1, 5):
+    print(card_number)
 
 ## Тестирование:
 Покрытие кода тестами = 100%.
