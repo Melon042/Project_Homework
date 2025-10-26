@@ -1,0 +1,16 @@
+import os
+import json
+
+
+def get_list_from_json_file(path_to_json_file):
+    try:
+        if not os.path.isfile(path_to_json_file):
+            return []
+        with open(path_to_json_file, "r", encoding="utf-8") as file:
+            data_json = file.read().strip()
+        if not data_json:
+            return []
+        data = json.loads(data_json)
+        return data if isinstance(data, list) else []
+    except (json.JSONDecodeError, FileNotFoundError):
+        return []
