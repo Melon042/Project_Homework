@@ -1,5 +1,5 @@
-import os
 import json
+import os
 
 
 def get_list_from_json_file(path_to_json_file):
