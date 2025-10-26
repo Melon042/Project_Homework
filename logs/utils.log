@@ -1,0 +1,10 @@
+2025-10-26 18:51:23,606 utils_logger INFO: Вызов функции "get_list_from_json_file".
+2025-10-26 18:51:23,607 utils_logger INFO: Файл успешно прочитан, возвращён список.
+2025-10-26 18:51:23,609 utils_logger INFO: Вызов функции "get_list_from_json_file".
+2025-10-26 18:51:23,609 utils_logger ERROR: Возникла ошибка: Expecting value: line 1 column 1 (char 0), возвращен пустой список.
+2025-10-26 18:51:23,611 utils_logger INFO: Вызов функции "get_list_from_json_file".
+2025-10-26 18:51:23,611 utils_logger WARNING: Файл пуст, возвращен пустой список.
+2025-10-26 18:51:23,613 utils_logger INFO: Вызов функции "get_list_from_json_file".
+2025-10-26 18:51:23,614 utils_logger WARNING: Файл содержит не список, возвращён пустой список.
+2025-10-26 18:51:23,615 utils_logger INFO: Вызов функции "get_list_from_json_file".
+2025-10-26 18:51:23,615 utils_logger WARNING: Файл не найден, возвращен пустой список.
