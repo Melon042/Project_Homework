@@ -3,6 +3,8 @@ import json
 
 
 def get_list_from_json_file(path_to_json_file):
+    """Принимает путь до JSON-файла и возвращает список.
+    Если файл пустой, содержит не список или не найден, функция возвращает пустой список."""
     try:
         if not os.path.isfile(path_to_json_file):
             return []
