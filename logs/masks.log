@@ -1,0 +1,38 @@
+2025-10-26 18:51:19,129 masks_logger INFO: Вызов функции "get_mask_card_number".
+2025-10-26 18:51:19,130 masks_logger INFO: Успешно замаскирован номер карты: "1596 83** **** 5199"
+2025-10-26 18:51:19,130 masks_logger INFO: Вызов функции "get_mask_card_number".
+2025-10-26 18:51:19,130 masks_logger INFO: Успешно замаскирован номер карты: "1596 83** **** 5199"
+2025-10-26 18:51:19,130 masks_logger INFO: Вызов функции "get_mask_card_number".
+2025-10-26 18:51:19,130 masks_logger INFO: Успешно замаскирован номер карты с префиксом: "Maestro"
+2025-10-26 18:51:19,130 masks_logger INFO: Вызов функции "get_mask_card_number".
+2025-10-26 18:51:19,130 masks_logger INFO: Успешно замаскирован номер карты с префиксом: "Visa Classic"
+2025-10-26 18:51:19,130 masks_logger INFO: Вызов функции "get_mask_card_number".
+2025-10-26 18:51:19,130 masks_logger INFO: Успешно замаскирован номер карты: "1596 83** **** 5199"
+2025-10-26 18:51:19,130 masks_logger INFO: Вызов функции "get_mask_card_number".
+2025-10-26 18:51:19,130 masks_logger ERROR: Ошибка ValueError, некорректная длина номера карты.
+2025-10-26 18:51:19,130 masks_logger INFO: Вызов функции "get_mask_card_number".
+2025-10-26 18:51:19,130 masks_logger ERROR: Ошибка ValueError, некорректная длина номера карты.
+2025-10-26 18:51:19,130 masks_logger INFO: Вызов функции "get_mask_card_number".
+2025-10-26 18:51:19,130 masks_logger ERROR: Ошибка ValueError, некорректная длина номера карты.
+2025-10-26 18:51:19,131 masks_logger INFO: Вызов функции "get_mask_card_number".
+2025-10-26 18:51:19,131 masks_logger ERROR: Ошибка ValueError, некорректная длина номера карты.
+2025-10-26 18:51:19,131 masks_logger INFO: Вызов функции "get_mask_card_number".
+2025-10-26 18:51:19,131 masks_logger ERROR: Ошибка ValueError, некорректная длина номера карты.
+2025-10-26 18:51:19,132 masks_logger INFO: Вызов функции "get_mask_account_number".
+2025-10-26 18:51:19,132 masks_logger INFO: Успешно замаскирован номер счёта: "**9589"
+2025-10-26 18:51:19,133 masks_logger INFO: Вызов функции "get_mask_account_number".
+2025-10-26 18:51:19,133 masks_logger INFO: Успешно замаскирован номер счёта с префиксом: "Счет"
+2025-10-26 18:51:19,134 masks_logger INFO: Вызов функции "get_mask_account_number".
+2025-10-26 18:51:19,134 masks_logger INFO: Успешно замаскирован номер счёта с префиксом: "Счет:"
+2025-10-26 18:51:19,135 masks_logger INFO: Вызов функции "get_mask_account_number".
+2025-10-26 18:51:19,135 masks_logger INFO: Успешно замаскирован номер счёта с префиксом: "Счет:"
+2025-10-26 18:51:19,136 masks_logger INFO: Вызов функции "get_mask_account_number".
+2025-10-26 18:51:19,136 masks_logger INFO: Успешно замаскирован номер счёта: "**9589"
+2025-10-26 18:51:19,137 masks_logger INFO: Вызов функции "get_mask_account_number".
+2025-10-26 18:51:19,137 masks_logger ERROR: Ошибка ValueError, некорректная длина номера счёта.
+2025-10-26 18:51:19,138 masks_logger INFO: Вызов функции "get_mask_account_number".
+2025-10-26 18:51:19,138 masks_logger ERROR: Ошибка ValueError, некорректная длина номера счёта.
+2025-10-26 18:51:19,139 masks_logger INFO: Вызов функции "get_mask_account_number".
+2025-10-26 18:51:19,139 masks_logger ERROR: Ошибка ValueError, некорректная длина номера счёта.
+2025-10-26 18:51:19,140 masks_logger INFO: Вызов функции "get_mask_account_number".
+2025-10-26 18:51:19,140 masks_logger ERROR: Ошибка ValueError, некорректная длина номера счёта.
