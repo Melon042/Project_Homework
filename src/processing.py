@@ -19,18 +19,18 @@ def sort_by_date(bank_operations: list[dict], reverse: bool = True) -> list[dict
     return sorted_bank_operations
 
 
-def process_bank_search(data:list[dict], search:str)->list[dict]:
+def process_bank_search(data: list[dict], search: str) -> list[dict]:
     """Принимает список словарей с данными о банковских операциях и строку поиска,
     возвращает список словарей, у которых в описании есть данная строка"""
     result = []
 
     for operation in data:
-        if re.search(search, operation['description']):
+        if re.search(search, operation["description"]):
             result.append(operation)
     return result
 
 
-def count_categories(data:list[dict], categories_list:list) -> dict:
+def count_categories(data: list[dict], categories_list: list) -> dict:
     """Принимает список словарей с данными о банковских операциях и список категорий операций,
     возвращает словарь, в котором ключи — это названия категорий, а значения — это количество
     операций в каждой категории"""
@@ -38,7 +38,7 @@ def count_categories(data:list[dict], categories_list:list) -> dict:
 
     for operation in data:
         for category in categories_list:
-            if category == operation['description']:
+            if category == operation["description"]:
                 categories.append(category)
                 break
 
