@@ -85,16 +85,43 @@ def main():
         print("Не найдено ни одной транзакции, подходящей под ваши условия фильтрации.")
 
     if len(operations_list) > 0:
-        for operation in operations_list:
-            if operation["description"] == "Открытие вклада":
-                print(
-                    f"""{get_date(operation['date'])} {operation['description']}
-                {get_mask_account_number(operation['to'])}
-                Сумма: {operation['operationAmount']['amount']} {operation['operationAmount']['currency']['name']}\n"""
-                )
-            else:
-                print(
-                    f"""{get_date(operation['date'])} {operation['description']}
-                {get_mask_account_or_card_num(operation['from'])} -> {get_mask_account_or_card_num(operation['to'])}
-                Сумма: {operation['operationAmount']['amount']} {operation['operationAmount']['currency']['name']}\n"""
-                )
+        if option_chosen == "1":
+            for operation in operations_list:
+                if operation["operationAmount"]["currency"]["name"] == "руб.":
+                    currency_syntax = operation["operationAmount"]["currency"]["name"]
+                else:
+                    currency_syntax = operation["operationAmount"]["currency"]["code"]
+                if operation["description"] == "Открытие вклада":
+                    print(
+                        f"""{get_date(operation['date'])} {operation['description']}
+                    {get_mask_account_number(operation['to'])}
+                    Сумма: {operation['operationAmount']['amount']} {currency_syntax}\n
+                    """
+                    )
+                else:
+                    print(
+                        f"{get_date(operation['date'])} {operation['description']}\n"
+                        f"{get_mask_account_or_card_num(operation['from'])} -> "
+                        f"{get_mask_account_or_card_num(operation['to'])}\n"
+                        f"Сумма: {operation['operationAmount']['amount']} {currency_syntax}\n"
+                    )
+        else:
+            for operation in operations_list:
+                if operation["currency_code"] == "RUB":
+                    currency = "руб."
+                else:
+                    currency = operation["currency_code"]
+
+                if operation["description"] == "Открытие вклада":
+                    print(
+                        f"""{get_date(operation['date'])} {operation['description']}
+                    {get_mask_account_number(operation['to'])}
+                    Сумма: {operation['amount']} {currency}\n"""
+                    )
+                else:
+                    print(
+                        f"{get_date(operation['date'])} {operation['description']}\n"
+                        f"{get_mask_account_or_card_num(operation['from'])} -> "
+                        f"{get_mask_account_or_card_num(operation['to'])}\n"
+                        f"Сумма: {operation['amount']} {currency}\n"
+                    )

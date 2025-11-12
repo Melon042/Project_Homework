@@ -22,12 +22,15 @@ def sort_by_date(bank_operations: list[dict], reverse: bool = True) -> list[dict
 def process_bank_search(data: list[dict], search: str) -> list[dict]:
     """Принимает список словарей с данными о банковских операциях и строку поиска,
     возвращает список словарей, у которых в описании есть данная строка"""
-    result = []
 
+    pattern = re.compile(search, re.IGNORECASE)
+    search_result = []
     for operation in data:
-        if re.search(search, operation["description"]):
-            result.append(operation)
-    return result
+        if pattern.search(operation["description"]):
+            search_result.append(operation)
+        else:
+            continue
+    return search_result
 
 
 def count_categories(data: list[dict], categories_list: list) -> dict:
